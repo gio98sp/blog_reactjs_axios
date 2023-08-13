@@ -6,6 +6,7 @@ import './index.css';
 import App from './App.jsx';
 import { Home } from './routes/Home';
 import { NewPost } from './routes/NewPost.jsx';
+import { Post } from './routes/Post';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: '/new',
         element: <NewPost />,
       },
+      {
+        path: '/posts/:id',
+        element: <Post />
+      }
     ],
   },
 ]);
