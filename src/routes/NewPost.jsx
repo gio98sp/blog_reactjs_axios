@@ -1,4 +1,20 @@
+import './NewPost.css'
 
 export const NewPost = () => {
-  return <h1>NewPost</h1>
-}
+  return (
+    <div className="new-post">
+      <h2>Inserir novo Post:</h2>
+      <form>
+        <div className="form-control">
+          <label htmlFor="title">Título:</label>
+          <input type="text" name="title" id="title" placeholder="Digite o título" />
+        </div>
+        <div className="form-control">
+          <label htmlFor="body">Conteúdo:</label>
+          <textarea name="body" id="body" placeholder="Digite o conteúdo"></textarea>
+        </div>
+        <input type="submit" value="Criar Post" className="btn" />
+      </form>
+    </div>
+  );
+};
