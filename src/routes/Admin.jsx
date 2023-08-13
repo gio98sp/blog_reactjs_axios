@@ -21,6 +21,16 @@ export const Admin = () => {
     getPosts();
   }, []);
 
+  const deletePost = async (id) => {
+    try {
+      await blogFetch.delete(`/posts/${id}`);
+      const newPosts = posts.filter((post) => post.id !== id);
+      setPosts(newPosts);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="admin">
       <h1>Gerenciar Posts</h1>
@@ -32,7 +42,9 @@ export const Admin = () => {
             <h2>{post.title}</h2>
             <div className="actions">
               <Link className="btn edit-btn">Editar</Link>
-              <button className="btn delete-btn">Excluir</button>
+              <button className="btn delete-btn" onClick={() => deletePost(post.id)}>
+                Excluir
+              </button>
             </div>
           </div>
         ))
