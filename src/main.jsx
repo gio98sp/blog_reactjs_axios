@@ -8,6 +8,7 @@ import { Home } from './routes/Home';
 import { NewPost } from './routes/NewPost.jsx';
 import { Post } from './routes/Post';
 import { Admin } from './routes/Admin';
+import { EditPost } from './routes/EditPost';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/admin',
         element: <Admin />
+      },
+      {
+        path: '/posts/edit/:id',
+        element: <EditPost />
       }
     ],
   },
