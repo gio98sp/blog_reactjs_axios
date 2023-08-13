@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { blogFetch } from '../axios/config';
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
 
   const getPosts = async () => {
     try {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      const res = await blogFetch.get('/posts');
       const data = res.data;
       setPosts(data);
     } catch (error) {
