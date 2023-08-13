@@ -24,7 +24,7 @@ export const EditPost = () => {
 
   useEffect(() => {
     getPost();
-  }, []);
+  });
 
   const sendPost = async (e) => {
     e.preventDefault();
